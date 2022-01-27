@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grow : MonoBehaviour
+public class antiWayGrow : MonoBehaviour
 {
     // Start is called before the first frame update
     public float time;
@@ -14,7 +14,7 @@ public class Grow : MonoBehaviour
     void Start()
     {
         random = Random.Range(0.15f, 0.4f);
-        randomA = Random.Range(-70f, -50f); 
+        randomA = Random.Range(-70f, -50f);
         randomB = Random.Range(2f, 3f);
 
         //print(random);
@@ -24,10 +24,10 @@ public class Grow : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        time2 = (time-3)/15;
+        time2 = (time-3) / 15;
         if (0 < time2 && time2 * 15 < random)
         {
-            transform.Translate(time2, randomA * (time2) * (time2) + randomB * (time2), 0);
+            transform.Translate(-time2, randomA * (time2) * (time2) + randomB * (time2), 0);
         }
 
         else
